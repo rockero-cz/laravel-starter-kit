@@ -1,0 +1,11 @@
+{
+    "preset": "laravel",
+    "notName": ["*.blade.php"],
+    "rules": {
+        "braces": false,
+        "class_attributes_separation": false,
+        "concat_space": {
+            "spacing": "one"
+        }
+    }
+}
