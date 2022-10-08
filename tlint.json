@@ -1,0 +1,4 @@
+{
+    "preset": "Rockero\\StarterKit\\Linting\\Preset",
+    "excluded": ["tests/"]
+}
