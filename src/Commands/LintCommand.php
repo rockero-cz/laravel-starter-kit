@@ -68,8 +68,8 @@ class LintCommand extends Command
                 echo json_encode($this->errors);
             } else {
                 $this->newLine();
-                $this->output->writeln("<fg=white;options=bold>Lints:  <fg=red;options=bold>".count($this->errors)." failed</>");
-                $this->output->writeln("<fg=white;options=bold>Time:</>  <fg=white>".$this->totalTime."s</>");
+                $this->output->writeln('<fg=white;options=bold>Lints:  <fg=red;options=bold>' . count($this->errors) . ' failed</>');
+                $this->output->writeln('<fg=white;options=bold>Time:</>  <fg=white>' . $this->totalTime . 's</>');
 
                 return Command::INVALID;
             }
