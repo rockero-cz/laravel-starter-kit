@@ -12,6 +12,8 @@ class LintCommand extends Command
 
     public $description = 'Run linter';
 
+    protected string $totalTime;
+
     protected array $errors = [];
 
     public function handle(): int
@@ -20,6 +22,7 @@ class LintCommand extends Command
 
         $file = '';
         $message = '';
+        $startTime = microtime(true);
 
         $process->setTimeout(null)->run(function ($type, $output) use (&$file, &$message) {
             $lines = explode("\n", $output);
@@ -53,6 +56,8 @@ class LintCommand extends Command
             }
         });
 
+        $this->totalTime = round((microtime(true) - $startTime), 2);
+
         return $this->processOutput();
     }
 
@@ -63,6 +68,8 @@ class LintCommand extends Command
                 echo json_encode($this->errors);
             } else {
                 $this->newLine();
+                $this->output->writeln("<fg=white;options=bold>Lints:  <fg=red;options=bold>".count($this->errors)." failed</>");
+                $this->output->writeln("<fg=white;options=bold>Time:</>  <fg=white>".$this->totalTime."s</>");
 
                 return Command::INVALID;
             }
