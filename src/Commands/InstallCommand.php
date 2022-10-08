@@ -12,6 +12,6 @@ class InstallCommand extends Command
 
     public function handle(): void
     {
-        $this->call("vendor:publish", ['--provider' => "Rockero\\StarterKit\\StarterKitServiceProvider"]);
+        $this->call('vendor:publish', ['--provider' => 'Rockero\\StarterKit\\StarterKitServiceProvider']);
     }
 }
