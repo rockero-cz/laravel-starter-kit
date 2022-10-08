@@ -2,9 +2,9 @@
 
 namespace Rockero\StarterKit;
 
+use Rockero\StarterKit\Commands\LintCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Rockero\StarterKit\Commands\LintCommand;
 
 class StarterKitServiceProvider extends PackageServiceProvider
 {

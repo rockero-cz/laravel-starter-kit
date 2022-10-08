@@ -3,8 +3,8 @@
 namespace Rockero\StarterKit\Commands;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Process\Process;
 use Illuminate\Support\Str;
+use Symfony\Component\Process\Process;
 
 class LintCommand extends Command
 {
@@ -30,20 +30,20 @@ class LintCommand extends Command
             //   =======
             //   ! Imports should be order automatically
             //   5 : `use Illuminate\Foundation\Bus\DispatchesJobs;`
-            
+
             foreach ($lines as $line) {
                 // File
                 if (str_starts_with($line, 'Lints for')) {
-                    $file = Str::after($line, 'Lints for ' . base_path() . '/');
+                    $file = Str::after($line, 'Lints for '.base_path().'/');
                 }
 
                 // Error
-                else if (str_starts_with($line, '!')) {
+                elseif (str_starts_with($line, '!')) {
                     $message = Str::after($line, '! ');
                 }
 
                 // Line number (possibly)
-                else if ($line = Str::before($line, ' : `')) {
+                elseif ($line = Str::before($line, ' : `')) {
                     if (! is_numeric($line)) {
                         continue;
                     }
@@ -70,7 +70,7 @@ class LintCommand extends Command
 
         return Command::SUCCESS;
     }
-    
+
     protected function outputError(string $file, string $message, string $line): void
     {
         $this->errors[] = compact('file', 'message', 'line');
