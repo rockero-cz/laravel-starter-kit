@@ -8,6 +8,6 @@ class LintError
         readonly public string $file,
         readonly public int $line,
         readonly public string $message,
-    ) {  
+    ) {
     }
 }

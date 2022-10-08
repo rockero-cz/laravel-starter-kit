@@ -11,6 +11,7 @@ use Rockero\StarterKit\Linting\LintError;
 class LintCommand extends Command
 {
     public $signature = 'rockero:lint {--json}';
+
     public $description = 'Run linter';
 
     public function handle(): int
@@ -19,7 +20,7 @@ class LintCommand extends Command
             Linter::collect()->whenNotEmpty(function (Collection $errors) {
                 $this->output->write($errors->toJson());
             });
-            
+
             return self::SUCCESS;
         }
 
@@ -34,7 +35,7 @@ class LintCommand extends Command
         });
 
         if ($errors > 0) {
-            $this->output->error($errors . ' ' . Str::plural('problem', $errors) . ' found');
+            $this->output->error($errors.' '.Str::plural('problem', $errors).' found');
 
             return self::INVALID;
         } else {
