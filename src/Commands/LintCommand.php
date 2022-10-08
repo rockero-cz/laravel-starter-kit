@@ -34,7 +34,7 @@ class LintCommand extends Command
             foreach ($lines as $line) {
                 // File
                 if (str_starts_with($line, 'Lints for')) {
-                    $file = Str::after($line, 'Lints for '.base_path().'/');
+                    $file = Str::after($line, 'Lints for ' . base_path() . '/');
                 }
 
                 // Error

@@ -21,7 +21,7 @@ class StarterKitServiceProvider extends PackageServiceProvider
     {
         parent::boot();
 
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'courier');
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'courier');
 
         $this->publishes([
             __DIR__ . '/../tlint.json' => $this->app->basePath('tlint.json'),
