@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Rockero\StarterKit\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class StarterKitCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'starter-kit';
 
     public $description = 'My command';
 
