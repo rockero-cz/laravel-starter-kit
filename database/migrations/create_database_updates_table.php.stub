@@ -8,12 +8,15 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('starter_kit_table', function (Blueprint $table) {
+        Schema::create('database_updates', function (Blueprint $table) {
             $table->id();
-
-            // add fields
-
-            $table->timestamps();
+            $table->string('file');
+            $table->string('executed_at');
         });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('database_updates');
     }
 };

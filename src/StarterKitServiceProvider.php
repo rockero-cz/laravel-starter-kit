@@ -4,6 +4,8 @@ namespace Rockero\StarterKit;
 
 use Rockero\StarterKit\Commands\InstallCommand;
 use Rockero\StarterKit\Commands\LintCommand;
+use Rockero\StarterKit\Commands\MakeUpdateCommand;
+use Rockero\StarterKit\Commands\UpdateDatabaseCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -14,7 +16,10 @@ class StarterKitServiceProvider extends PackageServiceProvider
         $package
             ->name('starter-kit')
             ->hasCommand(LintCommand::class)
-            ->hasCommand(InstallCommand::class);
+            ->hasCommand(InstallCommand::class)
+            ->hasCommand(UpdateDatabaseCommand::class)
+            ->hasCommand(MakeUpdateCommand::class)
+            ->hasMigrations(['create_database_updates_table']);
     }
 
     public function boot()
