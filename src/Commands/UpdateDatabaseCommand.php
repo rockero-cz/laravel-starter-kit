@@ -23,7 +23,7 @@ class UpdateDatabaseCommand extends Command
         }
 
         if ($this->argument('file')) {
-            $this->comment('Updating: ' . $this->argument('file'));
+            $this->comment('Updating: '.$this->argument('file'));
 
             $path = sprintf('%s/%s.php', database_path('updates'), $this->argument('file'));
 
