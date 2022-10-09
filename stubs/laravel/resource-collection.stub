@@ -1,0 +1,19 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\JsonSerializable;
+use Illuminate\Http\Resources\Json\ResourceCollection;
+
+class {{ class }} extends ResourceCollection
+{
+    /**
+     * Transform the resource collection into an array.
+     */
+    public function toArray(Request $request): Arrayable|JsonSerializable
+    {
+        return parent::toArray($request);
+    }
+}

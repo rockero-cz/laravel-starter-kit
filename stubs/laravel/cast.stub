@@ -1,0 +1,24 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+
+class {{ class }} implements CastsAttributes
+{
+    /**
+     * Cast the given value.
+     */
+    public function get($model, string $key, $value, array $attributes)
+    {
+        return $value;
+    }
+
+    /**
+     * Prepare the given value for storage.
+     */
+    public function set($model, string $key, $value, array $attributes)
+    {
+        return $value;
+    }
+}
