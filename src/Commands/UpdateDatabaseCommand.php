@@ -38,7 +38,6 @@ class UpdateDatabaseCommand extends Command
 
         $executedUpdates = DB::table('database_updates')->pluck('file')->all();
 
-        /** @phpstan-ignore-next-line */
         $pendingUpdates = $updates->reject(fn (SplFileInfo $file) => in_array($file->getFilename(), $executedUpdates));
 
         $pendingUpdates->each(function (SplFileInfo $file) {

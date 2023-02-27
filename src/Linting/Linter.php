@@ -26,7 +26,7 @@ class Linter
     /**
      * Lazily execute a callback over each error.
      *
-     * @param  callable(LintError)  $callback
+     * @param  callable(LintError): void   $callback
      */
     public static function run($callback): void
     {
