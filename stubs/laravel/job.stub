@@ -11,7 +11,7 @@ class {{ class }}
     /**
      * Create a new job instance.
      */
-    public function __construct(): void
+    public function __construct()
     {
         //
     }

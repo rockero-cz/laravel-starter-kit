@@ -2,16 +2,16 @@
 
 namespace {{ namespace }};
 
+use Closure;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Closure;
 
 class {{ class }} extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(): void
+    public function __construct()
     {
         //
     }

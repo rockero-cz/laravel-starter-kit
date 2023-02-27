@@ -9,18 +9,18 @@ class {{ class }} extends Command
     /**
      * The name and signature of the console command.
      */
-    protected string $signature = '{{ command }}';
+    protected $signature = '{{ command }}';
 
     /**
      * The console command description.
      */
-    protected string $description = 'Command description';
+    protected $description = 'Command description';
 
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
-        return Command::SUCCESS;
+        //
     }
 }

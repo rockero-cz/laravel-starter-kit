@@ -17,7 +17,7 @@ class {{ class }}
     /**
      * Create a new event instance.
      */
-    public function __construct(): void
+    public function __construct()
     {
         //
     }
@@ -25,8 +25,10 @@ class {{ class }}
     /**
      * Get the channels the event should broadcast on.
      */
-    public function broadcastOn(): Channel|array
+    public function broadcastOn(): array
     {
-        return new PrivateChannel('channel-name');
+        return [
+            new PrivateChannel('channel-name'),
+        ];
     }
 }
