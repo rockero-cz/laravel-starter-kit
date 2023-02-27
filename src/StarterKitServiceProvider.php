@@ -2,6 +2,7 @@
 
 namespace Rockero\StarterKit;
 
+use Rockero\StarterKit\Commands\ClassMakeCommand;
 use Rockero\StarterKit\Commands\InstallCommand;
 use Rockero\StarterKit\Commands\LintCommand;
 use Rockero\StarterKit\Commands\MakeUpdateCommand;
@@ -19,6 +20,7 @@ class StarterKitServiceProvider extends PackageServiceProvider
             ->hasCommand(InstallCommand::class)
             ->hasCommand(UpdateDatabaseCommand::class)
             ->hasCommand(MakeUpdateCommand::class)
+            ->hasCommand(ClassMakeCommand::class)
             ->hasMigrations(['create_database_updates_table']);
     }
 
