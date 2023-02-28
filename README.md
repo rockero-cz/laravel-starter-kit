@@ -7,10 +7,14 @@
 
 ## Installation
 
-Innstall the package via composer:
+Install the package via composer:
 
 ```bash
+# Laravel 10.x:
 composer require rockero-cz/starter-kit
+
+# Laravel 9.x:
+composer require rockero-cz/starter-kit:1.0.2
 ```
 
 Then make the initial setup with:
