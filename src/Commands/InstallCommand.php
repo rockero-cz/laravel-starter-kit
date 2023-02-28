@@ -12,6 +12,12 @@ class InstallCommand extends Command
 
     public function handle(): void
     {
+        if ($this->ask('Do you wish to setup CI?')) {
+            exec('composer require rockero-cz/ci');
+
+            $this->call('vendor:publish', ['--provider' => 'Rockero\\CI\\CIServiceProvider']);
+        }
+
         $this->call('vendor:publish', ['--provider' => 'Rockero\\StarterKit\\StarterKitServiceProvider']);
     }
 }
