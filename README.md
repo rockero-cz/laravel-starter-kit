@@ -1,33 +1,22 @@
-# This is my package starter-kit
+# Rockero starter-kit
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rockero-cz/starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/starter-kit)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/rockero-cz/starter-kit/run-tests?label=tests)](https://github.com/rockero-cz/starter-kit/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/rockero-cz/starter-kit/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/rockero-cz/starter-kit/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/rockero-cz/starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/starter-kit)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/starter-kit.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/starter-kit)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
 ## Installation
 
-You can install the package via composer:
+Innstall the package via composer:
 
 ```bash
 composer require rockero-cz/starter-kit
 ```
 
-You can publish and run the migrations with:
+Then make the initial setup with:
 
 ```bash
-php artisan vendor:publish --tag="starter-kit-migrations"
-php artisan migrate
+php artisan rockero:install
 ```
 
 You can publish the config file with:
@@ -49,11 +38,39 @@ Optionally, you can publish the views using
 php artisan vendor:publish --tag="starter-kit-views"
 ```
 
-## Usage
+## Features
 
-```php
-$starterKit = new Rockero\StarterKit();
-echo $starterKit->echoPhrase('Hello, Rockero!');
+### Static analysis
+
+Initializes PHPStan with level 5.
+
+### Formatting and linting
+
+-   Publishes Pint with custom configuration.
+-   Installs Tlint with custom preset.
+
+### Custom stubs
+
+Publishes Laravel's default stubs so we have unified source code across projects.
+
+### Helpful commands
+
+#### Generate a custom class
+
+```bash
+# Generate a plain class:
+php artisan make:class Flight
+
+# Generate a plain class with a matching test:
+php artisan make:class Flight --pest
+
+# Generate a class with constructor method:
+php artisan make:class Flight --construct
+php artisan make:class Flight -c
+
+# Generate a class with invoke method:
+php artisan make:class Flight --invokable
+php artisan make:class Flight -i
 ```
 
 ## Testing
@@ -76,8 +93,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Rockero](https://github.com/rockero-cz)
-- [All Contributors](../../contributors)
+-   [Rockero](https://github.com/rockero-cz)
+-   [All Contributors](../../contributors)
 
 ## License
 
