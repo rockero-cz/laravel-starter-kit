@@ -2,6 +2,7 @@
 
 namespace Rockero\StarterKit;
 
+use Rockero\StarterKit\Commands\ActionMakeCommand;
 use Rockero\StarterKit\Commands\ClassMakeCommand;
 use Rockero\StarterKit\Commands\InstallCommand;
 use Rockero\StarterKit\Commands\LintCommand;
@@ -21,6 +22,7 @@ class StarterKitServiceProvider extends PackageServiceProvider
             ->hasCommand(UpdateDatabaseCommand::class)
             ->hasCommand(MakeUpdateCommand::class)
             ->hasCommand(ClassMakeCommand::class)
+            ->hasCommand(ActionMakeCommand::class)
             ->hasMigrations(['create_database_updates_table']);
     }
 
@@ -33,6 +35,6 @@ class StarterKitServiceProvider extends PackageServiceProvider
             __DIR__.'/../stubs/pint.stub' => $this->app->basePath('pint.json'),
             __DIR__.'/../stubs/phpstan.stub' => $this->app->basePath('phpstan.neon'),
             __DIR__.'/../stubs/laravel' => $this->app->basePath('stubs'),
-        ], );
+        ]);
     }
 }

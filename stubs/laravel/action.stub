@@ -1,0 +1,14 @@
+<?php
+
+namespace {{ namespace }};
+
+class {{ class }}
+{
+    /**
+     * Run the action.
+     */
+    public function run(): void
+    {
+        //
+    }
+}
