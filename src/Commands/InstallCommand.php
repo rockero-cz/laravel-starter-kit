@@ -15,9 +15,9 @@ class InstallCommand extends Command
         if ($this->ask('Do you wish to setup CI?')) {
             exec('composer require rockero-cz/ci');
 
-            $this->call('vendor:publish', ['--provider' => 'Rockero\\CI\\CIServiceProvider']);
+            $this->call('vendor:publish', ['--provider' => 'Rockero\\CI\\CIServiceProvider', '--force' => true]);
         }
 
-        $this->call('vendor:publish', ['--provider' => 'Rockero\\StarterKit\\StarterKitServiceProvider']);
+        $this->call('vendor:publish', ['--provider' => 'Rockero\\StarterKit\\StarterKitServiceProvider', '--force' => true]);
     }
 }
