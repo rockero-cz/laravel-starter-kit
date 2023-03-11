@@ -2,6 +2,13 @@
 
 All notable changes to `starter-kit` will be documented in this file.
 
+## 1.1.2 - 2023-03-11
+
+**Full Changelog**: https://github.com/rockero-cz/starter-kit/compare/1.1.1...1.1.2
+
+- Update stubs
+- Add make:action command
+
 ## 1.1.1 - 2023-02-28
 
 **Full Changelog**: https://github.com/rockero-cz/starter-kit/compare/1.1.0...1.1.1
