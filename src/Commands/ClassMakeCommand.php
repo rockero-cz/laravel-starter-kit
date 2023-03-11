@@ -12,10 +12,13 @@ class ClassMakeCommand extends GeneratorCommand
 {
     use CreatesMatchingTest;
 
+    /** @var string */
     protected $name = 'make:class';
 
+    /** @var string */
     protected $description = 'Create a new class';
 
+    /** @var string */
     protected $type = 'Class';
 
     /**
