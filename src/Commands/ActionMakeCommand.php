@@ -37,7 +37,7 @@ class ActionMakeCommand extends GeneratorCommand
     protected function getOptions(): array
     {
         return [
-            ['force', null, InputOption::VALUE_NONE, 'Create the action even if the action already exists']
+            ['force', null, InputOption::VALUE_NONE, 'Create the action even if the action already exists'],
         ];
     }
 
@@ -48,6 +48,6 @@ class ActionMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return $rootNamespace . '\Action';
+        return $rootNamespace.'\Action';
     }
 }
