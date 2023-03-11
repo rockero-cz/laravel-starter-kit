@@ -9,5 +9,6 @@ class {{ class }} extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    /** @var array<string> */
+    protected $fillable = [];
 }
