@@ -13,7 +13,9 @@ class ActionMakeCommand extends GeneratorCommand
     use CreatesMatchingTest;
 
     protected $name = 'make:action';
+
     protected $description = 'Create a new action';
+
     protected $type = 'Action';
 
     /**

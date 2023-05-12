@@ -19,12 +19,12 @@ class StarterKitServiceProvider extends PackageServiceProvider
             ->hasCommand(ClassMakeCommand::class)
             ->hasCommand(ActionMakeCommand::class)
             // Installation command
-            ->hasInstallCommand(function(InstallCommand $command) {
+            ->hasInstallCommand(function (InstallCommand $command) {
                 $command
-                    ->startWith(function(InstallCommand $command) {
+                    ->startWith(function (InstallCommand $command) {
                         $command->callSilent('vendor:publish', [
                             '--provider' => 'Rockero\\StarterKit\\StarterKitServiceProvider',
-                            '--force' => true
+                            '--force' => true,
                         ]);
                     })
                     ->publishConfigFile()
@@ -37,9 +37,9 @@ class StarterKitServiceProvider extends PackageServiceProvider
         parent::boot();
 
         $this->publishes([
-            __DIR__ . '/../stubs/phpstan.stub' => $this->app->basePath('phpstan.neon'),
-            __DIR__ . '/../stubs/tests/Feature/architecture-test.stub' => $this->app->basePath('tests/Feature/ArchitectureTest.php'),
-            __DIR__ . '/../stubs/laravel' => $this->app->basePath('stubs'),
+            __DIR__.'/../stubs/phpstan.stub' => $this->app->basePath('phpstan.neon'),
+            __DIR__.'/../stubs/tests/Feature/architecture-test.stub' => $this->app->basePath('tests/Feature/ArchitectureTest.php'),
+            __DIR__.'/../stubs/laravel' => $this->app->basePath('stubs'),
         ]);
     }
 }

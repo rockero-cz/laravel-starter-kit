@@ -13,7 +13,9 @@ class ClassMakeCommand extends GeneratorCommand
     use CreatesMatchingTest;
 
     protected $name = 'make:class';
+
     protected $description = 'Create a new class';
+
     protected $type = 'Class';
 
     /**
