@@ -6,14 +6,7 @@ use Illuminate\Console\Command;
 
 class {{ class }} extends Command
 {
-    /**
-     * The name and signature of the console command.
-     */
     protected $signature = '{{ command }}';
-
-    /**
-     * The console command description.
-     */
     protected $description = 'Command description';
 
     /**

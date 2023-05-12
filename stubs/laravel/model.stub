@@ -9,6 +9,5 @@ class {{ class }} extends Model
 {
     use HasFactory;
 
-    /** @var array<string> */
     protected $fillable = [];
 }
