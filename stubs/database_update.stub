@@ -1,9 +1,0 @@
-<?php
-
-return new class
-{
-    public function __invoke()
-    {
-        //
-    }
-};
