@@ -45,6 +45,6 @@ class ActionMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return $rootNamespace . '\Action';
+        return $rootNamespace.'\Action';
     }
 }

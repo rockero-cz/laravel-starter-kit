@@ -37,12 +37,12 @@ class StarterKitServiceProvider extends PackageServiceProvider
         parent::boot();
 
         $this->publishes([
-            __DIR__ . '/../stubs/tlint.stub' => $this->app->basePath('tlint.json'),
-            __DIR__ . '/../stubs/duster.stub' => $this->app->basePath('duster.json'),
-            __DIR__ . '/../stubs/pint.stub' => $this->app->basePath('pint.json'),
-            __DIR__ . '/../stubs/phpstan.stub' => $this->app->basePath('phpstan.neon'),
-            __DIR__ . '/../stubs/tests/Feature/architecture-test.stub' => $this->app->basePath('tests/Feature/ArchitectureTest.php'),
-            __DIR__ . '/../stubs/laravel' => $this->app->basePath('stubs'),
+            __DIR__.'/../stubs/tlint.stub' => $this->app->basePath('tlint.json'),
+            __DIR__.'/../stubs/duster.stub' => $this->app->basePath('duster.json'),
+            __DIR__.'/../stubs/pint.stub' => $this->app->basePath('pint.json'),
+            __DIR__.'/../stubs/phpstan.stub' => $this->app->basePath('phpstan.neon'),
+            __DIR__.'/../stubs/tests/Feature/architecture-test.stub' => $this->app->basePath('tests/Feature/ArchitectureTest.php'),
+            __DIR__.'/../stubs/laravel' => $this->app->basePath('stubs'),
         ]);
     }
 }
