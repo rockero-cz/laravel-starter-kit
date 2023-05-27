@@ -19,7 +19,7 @@
         "php": "^8.1",
         "illuminate/contracts": "^10.0",
         "spatie/laravel-package-tools": "^1.13.0",
-        "tightenco/tlint": "6.3.0",
+        "tightenco/duster": "2.0.0",
         "nunomaduro/larastan": "^2.0"
     },
     "require-dev": {

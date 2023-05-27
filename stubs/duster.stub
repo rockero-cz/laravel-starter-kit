@@ -1,0 +1,7 @@
+{
+    "scripts": {
+        "lint": {
+            "phpstan": ["./vendor/bin/phpstan", "analyse"],
+        }
+    }
+}

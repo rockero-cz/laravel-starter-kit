@@ -46,12 +46,11 @@ php artisan vendor:publish --tag="starter-kit-views"
 
 ### Static analysis
 
-Initializes PHPStan with level 5.
+Initializes PHPStan with custom configuration on level 7.
 
 ### Formatting and linting
 
--   Publishes Pint with custom configuration.
--   Installs Tlint with custom preset.
+Initializes Duster with custom configurations.
 
 ### Custom stubs
 
