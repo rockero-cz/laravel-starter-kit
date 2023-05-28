@@ -1,0 +1,7 @@
+<?php
+
+test('example test', function() {
+    $response = $this->get('/');
+
+    expect($response->status())->toBe(200);
+});
