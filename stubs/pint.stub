@@ -4,8 +4,10 @@
     "rules": {
         "braces": false,
         "class_attributes_separation": false,
+        "combine_consecutive_issets": true,
         "concat_space": {
             "spacing": "one"
         }
+        "no_useless_else": true,
     }
 }
