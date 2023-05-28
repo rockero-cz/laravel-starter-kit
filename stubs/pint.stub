@@ -7,7 +7,7 @@
         "combine_consecutive_issets": true,
         "concat_space": {
             "spacing": "one"
-        }
-        "no_useless_else": true,
+        },
+        "no_useless_else": true
     }
 }
