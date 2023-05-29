@@ -2,6 +2,10 @@
 
 All notable changes to `starter-kit` will be documented in this file.
 
+## 1.1.5 - 2023-05-29
+
+**Full Changelog**: https://github.com/rockero-cz/laravel-starter-kit/compare/1.1.4...1.1.5
+
 ## 1.1.4 - 2023-05-28
 
 **Full Changelog**: https://github.com/rockero-cz/starter-kit/compare/1.1.3...1.1.4
