@@ -26,6 +26,14 @@ class StarterKitServiceProvider extends PackageServiceProvider
                             '--provider' => 'Rockero\\StarterKit\\StarterKitServiceProvider',
                             '--force' => true,
                         ]);
+
+                        if ($command->confirm('Would you like to publish a GitHub Actions workflows?')) {
+                            $command->comment('Publishing GitHub Actions workflows...');
+
+                            $this->addPublishGroup('rockero-config', [
+                                __DIR__.'/../stubs/workflows/ci.stub' => $this->app->basePath('.github/workflows/ci.yml'),
+                            ]);
+                        }
                     })
                     ->publishConfigFile()
                     ->askToStarRepoOnGitHub('rockero-cz/starter-kit');

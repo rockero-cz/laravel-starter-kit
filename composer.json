@@ -1,12 +1,14 @@
 {
-    "name": "rockero-cz/starter-kit",
-    "description": "This is my package starter-kit",
+    "name": "rockero-cz/laravel-starter-kit",
+    "description": "This is my package laravel-starter-kit",
     "keywords": [
+        "rockero",
         "rockero-cz",
         "laravel",
+        "laravel-starter-kit",
         "starter-kit"
     ],
-    "homepage": "https://github.com/rockero-cz/starter-kit",
+    "homepage": "https://github.com/rockero-cz/laravel-starter-kit",
     "license": "MIT",
     "authors": [
         {
