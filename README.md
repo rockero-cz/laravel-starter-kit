@@ -1,9 +1,9 @@
 # Rockero starter-kit
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/rockero-cz/starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/starter-kit)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/rockero-cz/starter-kit/run-tests?label=tests)](https://github.com/rockero-cz/starter-kit/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/rockero-cz/starter-kit/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/rockero-cz/starter-kit/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/rockero-cz/starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/starter-kit)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/rockero-cz/laravel-starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/laravel-starter-kit)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/rockero-cz/laravel-starter-kit/run-tests?label=tests)](https://github.com/rockero-cz/laravel-starter-kit/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/rockero-cz/laravel-starter-kit/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/rockero-cz/laravel-starter-kit/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/rockero-cz/laravel-starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/laravel-starter-kit)
 
 ## Installation
 
@@ -11,10 +11,10 @@ Install the package via composer:
 
 ```bash
 # Laravel 10.x:
-composer require rockero-cz/starter-kit --dev
+composer require rockero-cz/laravel-starter-kit --dev
 
 # Laravel 9.x:
-composer require rockero-cz/starter-kit:1.0.2
+composer require rockero-cz/laravel-starter-kit:1.0.2
 ```
 
 Then make the initial setup with:
