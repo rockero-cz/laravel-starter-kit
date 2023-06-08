@@ -35,37 +35,120 @@ php artisan starter-kit:install
 
 ## Features
 
-### Static analysis
+All functionally of `rockero-cz/laravel-starter-kit` are described bellow in a simple list with examples. They are designed to speed up the kickoff of your projects. It can be installed on any kind of `Laravel` application.
 
-Initializes PHPStan with custom configuration on level 7.
+---
 
-### Formatting and linting
+### Pest setup
 
-Initializes Duster with custom configurations.
+The starter kit includes the initial setup of `Pest` by publishing a pre-configured `TestCase`, example tests and also `.env.testing` file.
 
-### Custom stubs
+Additionally, it generates an `ArchitectureTest.php` to maintain the codebase clean and sustainable.
 
-Publishes Laravel's default stubs so we have unified source code across projects.
+```php
+test('globals')
+    ->expect(['dd', 'dump', 'ray', 'env'])
+    ->not->toBeUsed();
 
-### Helpful commands
+test('controllers')
+    ->expect('App\Http\Controllers')
+    ->not->toUse('Illuminate\Http\Request');
 
-#### Generate a custom class
-
-```bash
-# Generate a plain class:
-php artisan make:class Flight
-
-# Generate a plain class with a matching test:
-php artisan make:class Flight --pest
-
-# Generate a class with constructor method:
-php artisan make:class Flight --construct
-php artisan make:class Flight -c
-
-# Generate a class with invoke method:
-php artisan make:class Flight --invokable
-php artisan make:class Flight -i
+test('value objects')
+    ->expect('App\ValueObjects')
+    ->toUseNothing();
 ```
+
+---
+
+### PHPStan setup
+
+Besides tests, it also prepares static analysis using the `PHPStan` tool with custom configuration on level 7.
+
+```neon
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    level: 7
+
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+
+    paths:
+        - app/
+```
+
+---
+
+### Duster setup
+
+For linting and formatting we use `Duster` by [Tighten](https://github.com/tighten). `Duster` unifies multiple tools together (`Pint`, `TLint`, `PHP_CodeSniffer` and `PHP CS Fixer`) inside one powerful command. It also helps us to follow some coding standards.
+
+We also have added `PHPStan` inside config to have everything unified in one single command.
+
+```php
+{
+    "scripts": {
+        "lint": {
+            "phpstan": ["./vendor/bin/phpstan", "analyse"]
+        },
+        "fix": {
+            "phpstan": ["./vendor/bin/phpstan", "analyse"]
+        }
+    }
+}
+```
+
+---
+
+### GitHub Workflows CI
+
+During the installation of the starter-kit, you will be prompted to add CI for GitHub Workflows.
+
+If you choose to proceed, a `ci.yml` file containing tests and `Duster` will be automatically generated.
+
+---
+
+### Stubs
+
+Publish Laravel's default stubs so we have unified source code across projects.
+
+They are also slightly modified to make the programming process more productive.
+
+---
+
+### Commands
+
+Since we follow the `Action` programming concept, the starter kit provides two commands which will make you more productive.
+
+**Make action command:** `php artisan make:action VerifyUserAction`
+
+```php
+class VerifyUserAction
+{
+    /**
+     * Run the action.
+     */
+    public function run(): void
+    {
+        //
+    }
+}
+```
+
+**Make class command:** `php artisan make:class ShoppingCart`
+
+```php
+class ShoppingCart
+{
+    //
+}
+```
+
+> Both commands have an option `--test` to also create matching tests.
+
+---
 
 ## Testing
 
