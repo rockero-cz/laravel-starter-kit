@@ -2,6 +2,9 @@
     "scripts": {
         "lint": {
             "phpstan": ["./vendor/bin/phpstan", "analyse"]
+        },
+        "fix": {
+            "phpstan": ["./vendor/bin/phpstan", "analyse"]
         }
     }
 }
