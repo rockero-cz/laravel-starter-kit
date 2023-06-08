@@ -6,7 +6,7 @@
       <img alt="Banner" src="https://banners.beyondco.de/Laravel%20Starter%20Kit.png?theme=light&packageManager=composer+require&packageName=rockero-cz%2Flaravel-starter-kit&pattern=architect&style=style_1&description=Speed+up+the+kickoff.&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg">
 </picture>
 
-# Rockero starter-kit
+# Laravel Starter Kit
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rockero-cz/laravel-starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/laravel-starter-kit)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/rockero-cz/laravel-starter-kit/run-tests?label=tests)](https://github.com/rockero-cz/laravel-starter-kit/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -18,36 +18,19 @@
 Install the package via composer:
 
 ```bash
-# Laravel 10.x:
 composer require rockero-cz/laravel-starter-kit --dev
-
-# Laravel 9.x:
-composer require rockero-cz/laravel-starter-kit:1.0.2
 ```
 
-Then make the initial setup with:
-
-```bash
-php artisan rockero:install
-```
-
-You can publish the config file with:
+You can customize the installation command by publishing the config file with:
 
 ```bash
 php artisan vendor:publish --tag="starter-kit-config"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
+Then run the installation command:
 
 ```bash
-php artisan vendor:publish --tag="starter-kit-views"
+php artisan starter-kit:install
 ```
 
 ## Features

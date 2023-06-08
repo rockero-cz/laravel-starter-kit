@@ -13,8 +13,8 @@ class StarterKitServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('rockero')
-            ->hasConfigFile('rockero')
+            ->name('starter-kit')
+            ->hasConfigFile('starter-kit')
             // Feature commands
             ->hasCommand(ClassMakeCommand::class)
             ->hasCommand(ActionMakeCommand::class)
@@ -30,13 +30,12 @@ class StarterKitServiceProvider extends PackageServiceProvider
                         if ($command->confirm('Would you like to publish a GitHub Actions workflows?')) {
                             $command->comment('Publishing GitHub Actions workflows...');
 
-                            $this->addPublishGroup('rockero-config', [
+                            $this->addPublishGroup('starter-kit-config', [
                                 __DIR__.'/../stubs/workflows/ci.stub' => $this->app->basePath('.github/workflows/ci.yml'),
                             ]);
                         }
                     })
-                    ->publishConfigFile()
-                    ->askToStarRepoOnGitHub('rockero-cz/starter-kit');
+                    ->askToStarRepoOnGitHub('rockero-cz/laravel-starter-kit');
             });
     }
 
@@ -51,13 +50,14 @@ class StarterKitServiceProvider extends PackageServiceProvider
             __DIR__.'/../stubs/pint.stub' => $this->app->basePath('pint.json'),
             __DIR__.'/../stubs/tlint.stub' => $this->app->basePath('tlint.json'),
             __DIR__.'/../stubs/env-testing.stub' => $this->app->basePath('.env.testing'),
-            // Laravel stubs
-            __DIR__.'/../stubs/laravel' => $this->app->basePath('stubs'),
+            __DIR__.'/../stubs/config/project.stub' => $this->app->basePath('config/project.php'),
             // Tests stubs
             __DIR__.'/../stubs/tests/pest.stub' => $this->app->basePath('tests/Pest.php'),
             __DIR__.'/../stubs/tests/Unit/example-test.stub' => $this->app->basePath('tests/Unit/ExampleTest.php'),
             __DIR__.'/../stubs/tests/Feature/architecture-test.stub' => $this->app->basePath('tests/Feature/ArchitectureTest.php'),
             __DIR__.'/../stubs/tests/Feature/example-test.stub' => $this->app->basePath('tests/Feature/ExampleTest.php'),
+            // Laravel stubs
+            __DIR__.'/../stubs/laravel' => $this->app->basePath('stubs'),
         ]);
     }
 }

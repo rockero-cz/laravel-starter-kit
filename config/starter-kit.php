@@ -1,6 +1,7 @@
 <?php
 
-// config for Rockero/StarterKit
+// Configuration for the installation command.
+
 return [
 
 ];
