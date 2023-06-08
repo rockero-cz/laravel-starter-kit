@@ -1,3 +1,11 @@
+<picture>
+    <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://banners.beyondco.de/Laravel%20Starter%20Kit.png?theme=dark&packageManager=composer+require&packageName=rockero-cz%2Flaravel-starter-kit&pattern=architect&style=style_1&description=Speed+up+the+kickoff.&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg"
+    />
+      <img alt="Banner" src="https://banners.beyondco.de/Laravel%20Starter%20Kit.png?theme=light&packageManager=composer+require&packageName=rockero-cz%2Flaravel-starter-kit&pattern=architect&style=style_1&description=Speed+up+the+kickoff.&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg">
+</picture>
+
 # Rockero starter-kit
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rockero-cz/laravel-starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/laravel-starter-kit)
