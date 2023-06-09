@@ -57,8 +57,9 @@ jobs:
           DB_PASSWORD: ""
 
   duster:
-    runs-on: ubuntu-latest
+    needs: tests
 
+    runs-on: ubuntu-latest
     permissions:
       contents: write
 

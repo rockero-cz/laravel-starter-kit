@@ -13,6 +13,8 @@
 
 ## Installation
 
+> Our starter-kit requires Laravel with version 10 or higher.
+
 Install the package via composer:
 
 ```bash
