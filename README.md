@@ -8,8 +8,10 @@
 
 # Laravel Starter Kit
 
+[![Rockero](https://img.shields.io/badge/Rockero-yellow)](https://rockero.cz)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rockero-cz/laravel-starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/laravel-starter-kit)
 [![Total Downloads](https://img.shields.io/packagist/dt/rockero-cz/laravel-starter-kit.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/laravel-starter-kit)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 
 ## Installation
 
