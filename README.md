@@ -20,7 +20,7 @@
 Install the package via composer:
 
 ```bash
-composer require rockero-cz/laravel-starter-kit --dev
+composer require rockero-cz/laravel-starter-kit --with-all-dependencies
 ```
 
 You can customize the installation command by publishing the config file with:
