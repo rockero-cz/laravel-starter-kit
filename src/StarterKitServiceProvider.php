@@ -22,18 +22,18 @@ class StarterKitServiceProvider extends PackageServiceProvider
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->startWith(function (InstallCommand $command) {
+                        if ($command->confirm('Would you like to publish a GitHub Actions workflows?')) {
+                            $command->comment('Publishing GitHub Actions workflows...');
+
+                            $this->publishes([
+                                __DIR__.'/../stubs/workflows/ci.stub' => $this->app->basePath('.github/workflows/ci.yml'),
+                            ]);
+                        }
+
                         $command->callSilent('vendor:publish', [
                             '--provider' => 'Rockero\\StarterKit\\StarterKitServiceProvider',
                             '--force' => true,
                         ]);
-
-                        if ($command->confirm('Would you like to publish a GitHub Actions workflows?')) {
-                            $command->comment('Publishing GitHub Actions workflows...');
-
-                            $this->addPublishGroup('starter-kit-config', [
-                                __DIR__.'/../stubs/workflows/ci.stub' => $this->app->basePath('.github/workflows/ci.yml'),
-                            ]);
-                        }
                     })
                     ->askToStarRepoOnGitHub('rockero-cz/laravel-starter-kit');
             });
