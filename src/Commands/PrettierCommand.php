@@ -20,7 +20,7 @@ class PrettierCommand extends Command
         $this->newLine();
 
         $result = Process::path(base_path())
-            ->run('npx prettier --write resources/', function (string $type, string $output) use (&$errorsCount) {
+            ->run('npx prettier --write resources/', function (string $type, string $output) {
                 echo $output;
             });
 
