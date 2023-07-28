@@ -4,9 +4,11 @@ namespace Rockero\StarterKit;
 
 use Rockero\StarterKit\Commands\ActionMakeCommand;
 use Rockero\StarterKit\Commands\ClassMakeCommand;
+use Rockero\StarterKit\Commands\PrettierCommand;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\Facades\Process;
 
 class StarterKitServiceProvider extends PackageServiceProvider
 {
@@ -18,16 +20,17 @@ class StarterKitServiceProvider extends PackageServiceProvider
             // Feature commands
             ->hasCommand(ClassMakeCommand::class)
             ->hasCommand(ActionMakeCommand::class)
+            ->hasCommand(PrettierCommand::class)
             // Installation command
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->startWith(function (InstallCommand $command) {
                         if ($command->confirm('Would you like to publish a GitHub Actions workflows?')) {
-                            $command->comment('Publishing GitHub Actions workflows...');
+                            $this->installGithubActions($command);
+                        }
 
-                            $this->publishes([
-                                __DIR__.'/../stubs/workflows/ci.stub' => $this->app->basePath('.github/workflows/ci.yml'),
-                            ]);
+                        if ($command->confirm('Would you like install Prettier?')) {
+                            $this->installPrettier($command);
                         }
 
                         $command->callSilent('vendor:publish', [
@@ -59,6 +62,30 @@ class StarterKitServiceProvider extends PackageServiceProvider
             __DIR__.'/../stubs/tests/Feature/example-test.stub' => $this->app->basePath('tests/Feature/ExampleTest.php'),
             // Laravel stubs
             __DIR__.'/../stubs/laravel' => $this->app->basePath('stubs'),
+        ]);
+    }
+
+    protected function installGithubActions(InstallCommand $command)
+    {
+        $command->comment('Publishing GitHub Actions workflows...');
+
+        $this->publishes([
+            __DIR__.'/../stubs/workflows/ci.stub' => $this->app->basePath('.github/workflows/ci.yml'),
+        ]);
+    }
+
+    protected function installPrettier(InstallCommand $command)
+    {
+        $command->comment('Installing prettier...');
+
+        Process::path(base_path())
+            ->run('npm install -D prettier@2.8.8 prettier-plugin-blade prettier-plugin-tailwindcss', function (string $type, string $output) {
+                echo $output;
+            });
+
+        $this->publishes([
+            __DIR__.'/../stubs/duster-with-prettier.stub' => $this->app->basePath('duster.json'),
+            __DIR__.'/../stubs/.prettierrc.stub' => $this->app->basePath('.prettierrc'),
         ]);
     }
 }
