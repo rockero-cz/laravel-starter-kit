@@ -2,13 +2,13 @@
 
 namespace Rockero\StarterKit;
 
+use Illuminate\Support\Facades\Process;
 use Rockero\StarterKit\Commands\ActionMakeCommand;
 use Rockero\StarterKit\Commands\ClassMakeCommand;
 use Rockero\StarterKit\Commands\PrettierCommand;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Illuminate\Support\Facades\Process;
 
 class StarterKitServiceProvider extends PackageServiceProvider
 {
