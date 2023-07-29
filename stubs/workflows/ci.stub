@@ -66,6 +66,7 @@ jobs:
           DB_PASSWORD: ""
 
       - name: Run duster
+        timeout-minutes: 10
         run: ./vendor/bin/duster fix
 
       - uses: stefanzweifel/git-auto-commit-action@v4
