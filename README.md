@@ -112,6 +112,14 @@ If you choose to proceed, a `ci.yml` file containing tests and `Duster` will be 
 
 ---
 
+### Prettier
+
+During the installation of the starter-kit, you will be prompted to add Prettier to CI and project.
+
+Installation prepare `.prettierrc` where is configuration and command `php artisan prettier` to fix your code on local environment.
+
+---
+
 ### Stubs
 
 Publish Laravel's default stubs so we have unified source code across projects.
