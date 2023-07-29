@@ -5,7 +5,7 @@
         },
         "fix": {
             "phpstan": ["./vendor/bin/phpstan", "analyse"],
-            "prettier": ["php", "artisan", "prettier"]
+            "prettier": ["npx", "prettier", "--write", "resources/"]
         }
     }
 }
