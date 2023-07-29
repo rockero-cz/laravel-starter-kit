@@ -28,8 +28,12 @@ class PrettierCommand extends Command
 
         if ($result->failed()) {
             $this->error("\n[ERROR] Found some errors");
+
+            return Command::FAILURE;
         } else {
             $this->info("\n[SUCCESS] No errors found");
+
+            return Command::SUCCESS;
         }
     }
 }
