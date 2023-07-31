@@ -14,7 +14,7 @@ class PrettierCommand extends Command
     /**
      * Run prettier formatting.
      */
-    public function handle()
+    public function handle(): int
     {
         $this->info('Formatting...');
         $this->newLine();
@@ -30,10 +30,10 @@ class PrettierCommand extends Command
             $this->error("\n[ERROR] Found some errors");
 
             return Command::FAILURE;
-        } else {
-            $this->info("\n[SUCCESS] No errors found");
-
-            return Command::SUCCESS;
         }
+
+        $this->info("\n[SUCCESS] No errors found");
+
+        return Command::SUCCESS;
     }
 }
