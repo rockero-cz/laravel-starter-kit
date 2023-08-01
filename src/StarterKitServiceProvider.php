@@ -12,6 +12,9 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class StarterKitServiceProvider extends PackageServiceProvider
 {
+    /**
+     * Configure package.
+     */
     public function configurePackage(Package $package): void
     {
         $package
@@ -42,7 +45,10 @@ class StarterKitServiceProvider extends PackageServiceProvider
             });
     }
 
-    public function boot()
+    /**
+     * Boot package.
+     */
+    public function boot(): void
     {
         parent::boot();
 
@@ -65,7 +71,10 @@ class StarterKitServiceProvider extends PackageServiceProvider
         ]);
     }
 
-    protected function installGithubActions(InstallCommand $command)
+    /**
+     * Install Github Actions.
+     */
+    protected function installGithubActions(InstallCommand $command): void
     {
         $command->comment('Publishing GitHub Actions workflows...');
 
@@ -74,7 +83,10 @@ class StarterKitServiceProvider extends PackageServiceProvider
         ]);
     }
 
-    protected function installPrettier(InstallCommand $command)
+    /**
+     * Install Prettier.
+     */
+    protected function installPrettier(InstallCommand $command): void
     {
         $command->comment('Installing prettier...');
 
