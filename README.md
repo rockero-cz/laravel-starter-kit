@@ -110,6 +110,10 @@ During the installation of the starter-kit, you will be prompted to add CI for G
 
 If you choose to proceed, a `ci.yml` file containing tests and `Duster` will be automatically generated.
 
+To allow github action to commit changes from duster and prettier you have to set permissions for that.
+
+Set `Read and write permissions` in `github.com -> (Your project) -> Settings -> Actions -> General -> Workflow permissions`
+
 ---
 
 ### Prettier
