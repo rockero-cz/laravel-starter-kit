@@ -1,4 +1,7 @@
 {
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 4,
     "tailwindConfig": "./tailwind.config.js",
     "plugins": [
         "./node_modules/prettier-plugin-blade/",
