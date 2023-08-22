@@ -43,7 +43,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install && npm run build
 
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
