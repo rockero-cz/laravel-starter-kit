@@ -91,7 +91,7 @@ class StarterKitServiceProvider extends PackageServiceProvider
         $command->comment('Installing prettier...');
 
         Process::path(base_path())
-            ->run('npm install -D prettier prettier-plugin-blade prettier-plugin-tailwindcss', function (string $type, string $output) {
+            ->run('npm install -D prettier@^2.0.2 prettier-plugin-blade prettier-plugin-tailwindcss@^0.4.1', function (string $type, string $output) {
                 echo $output;
             });
 
