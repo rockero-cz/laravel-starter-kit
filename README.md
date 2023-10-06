@@ -122,6 +122,8 @@ During the installation of the starter-kit, you will be prompted to add Prettier
 
 Installation prepare `.prettierrc` where is configuration and command `php artisan prettier` to fix your code on local environment.
 
+You can use the `.prettierignore` file to ignore any files or directories that you want. This can be useful for keeping Prettier from formatting files that you don't want it to format, or for keeping Prettier from formatting files that are not code files.
+
 ---
 
 ### Stubs
