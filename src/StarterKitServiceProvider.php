@@ -98,6 +98,7 @@ class StarterKitServiceProvider extends PackageServiceProvider
         $this->publishes([
             __DIR__.'/../stubs/duster-with-prettier.stub' => $this->app->basePath('duster.json'),
             __DIR__.'/../stubs/.prettierrc.stub' => $this->app->basePath('.prettierrc'),
+            __DIR__.'/../stubs/.prettierignore.stub' => $this->app->basePath('.prettierignore'),
         ]);
     }
 }
