@@ -69,7 +69,7 @@ Besides tests, it also prepares static analysis using the `PHPStan` tool with cu
 
 ```neon
 includes:
-    - ./vendor/nunomaduro/larastan/extension.neon
+    - ./vendor/larastan/larastan/extension.neon
 
 parameters:
     level: 7
