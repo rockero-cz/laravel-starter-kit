@@ -58,7 +58,6 @@ class StarterKitServiceProvider extends PackageServiceProvider
             __DIR__.'/../stubs/phpstan.stub' => $this->app->basePath('phpstan.neon'),
             __DIR__.'/../stubs/pint.stub' => $this->app->basePath('pint.json'),
             __DIR__.'/../stubs/tlint.stub' => $this->app->basePath('tlint.json'),
-            __DIR__.'/../stubs/tformat.stub' => $this->app->basePath('tformat.json'),
             __DIR__.'/../stubs/env-testing.stub' => $this->app->basePath('.env.testing'),
             __DIR__.'/../stubs/config/project.stub' => $this->app->basePath('config/project.php'),
             // Tests stubs
