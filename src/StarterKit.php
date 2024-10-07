@@ -2,6 +2,4 @@
 
 namespace Rockero\StarterKit;
 
-class StarterKit
-{
-}
+class StarterKit {}
